@@ -3,13 +3,14 @@ import re
 def add_items():
     includes = re.split(r'[,]+', (input("Enter items to add: ")))
     for include in includes:
-        shopping_list.append(include.strip())
-    return shopping_list
+        item = include.strip()
+        if item:
+            shopping_list.append(item)
 
 def view_list():
     print(shopping_list)
     
-def remove_from():
+def remove_items():
     removals = re.split(r'[,]+', (input("Enter items to remove: ")))
     for removal in removals:
         item = removal.strip()
@@ -25,7 +26,7 @@ def quit_program():
     print("Exiting the program...")
     return True  
 
-ACTIONS = {"a": add_items, "v": view_list, "r": remove_from, "s": save_as, "q": quit_program}
+ACTIONS = {"a": add_items, "v": view_list, "r": remove_items, "s": save_as, "q": quit_program}
 shopping_list = []
 
 def main():
