@@ -1,1 +1,2 @@
-shopping_lists/
+# Ignore all directories in the main directory
+*/
